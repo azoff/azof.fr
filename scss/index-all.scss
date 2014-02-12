@@ -3,8 +3,9 @@
 
 body {
 	padding: $default-size;
-	min-width: $min-width;
+	min-width: 320px;
 	margin: 0 auto;
+	zoom: 1;
 }
 
 header {
@@ -26,7 +27,6 @@ header {
 	}
 }
 
-
 aside {
 	overflow: hidden;
 	width: $aside-width;
@@ -39,6 +39,30 @@ aside {
 	}
 	i {
 		margin-right: $default-size/2;
+	}
+	.github-stats {
+		margin-left: 2px;
+		a {
+			clear: none;
+			em {
+				font-style: normal;
+			}
+			label {
+				display: none;
+				cursor: pointer;
+			}
+			&:first-child {
+				margin-right: $default-size/2;
+			}
+			&[href]:hover {
+				label {
+					display: inline;
+				}
+				em {
+					display: none;
+				}
+			}
+		}
 	}
 }
 
@@ -73,10 +97,7 @@ aside, p {
 
 }
 
-@media (max-width: 912px) {
-	body {
-		min-width: 480px;
-	}
+@media (max-width: 790px) {
 	aside, #content p {
 		float: none;
 		width: auto;
@@ -105,7 +126,6 @@ aside, p {
 @media (max-width: 480px) {
 	body {
 		font-size: 14px;
-		min-width: 320px;
 	}
 	header {
 		aside, .title h2 {

@@ -39,11 +39,18 @@ h4 {
 }
 
 a {
-	color: #000;
+
+	color: #CCC;
 	text-decoration: none;
-	&:hover {
-		text-decoration: underline;
+	@include transition(color 300ms);
+
+	&[href] {
+		color: #000;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
+
 }
 
 small {
