@@ -1,0 +1,12 @@
+@import "constants";
+@import "compass";
+
+footer.hide {
+	display: block;
+	text-align: center;
+	padding: $default-size 0;
+	img {
+		max-height: 1em;
+		margin: 0 0 -2px $default-size/2;
+	}
+}

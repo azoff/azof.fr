@@ -1,0 +1,58 @@
+@import "constants";
+@import "compass";
+
+* {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	@include box-sizing(border-box);
+}
+
+.hide {
+	display: none;
+}
+
+body {
+	color: #444;
+	font: $default-size/1 Roboto, Helvetica, Verdana, Sans;
+	padding: $default-size;
+}
+
+h1 {
+	font-size: 4em;
+	font-weight: 300;
+}
+
+h2 {
+	font-size: 2em;
+	font-weight: 300;
+}
+
+h3 {
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+h4 {
+	font-size: 1.5em;
+	font-weight: 300;
+}
+
+a {
+
+	color: #CCC;
+	text-decoration: none;
+	@include transition(color 300ms);
+
+	&[href] {
+		color: #000;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+}
+
+small {
+	color: #888;
+}
