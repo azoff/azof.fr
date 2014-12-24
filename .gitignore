@@ -3,3 +3,4 @@
 .iml
 .sass-cache
 *.lock
+_site
