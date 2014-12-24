@@ -14,22 +14,21 @@ require(['jquery', 'github'], function($, github){
 		var target  = $(el);
 		var repo    = target.attr('href').match('github.com/(.+)$')[1]
 		var request = github.getRepoDetails(repo);
-		var job     = $.when(target.parent(), request);
+		var job     = $.when(target, request);
 		job.then(applyStats);
 		return job;
 	}
 
 	function applyStats(target, stats) {
+		var container = target.parent();
 		stats = stats[0].data;
-		if (!stats.forks_url) return target;
-		target = github.statNode().appendTo(target);
-		animateCount(target.children('.forks')
-			.attr('href', stats.forks_url)
+		if (!stats.forks_url) return;
+		var href = target.attr('href');
+		var node = github.statNode().appendTo(container);
+		animateCount(node.children('.forks').attr('href', href)
 			.children('em'), stats.forks_count);
-		animateCount(target.children('.stars')
-			.attr('href', stats.stargazers_url)
+		animateCount(node.children('.stars').attr('href', href)
 			.children('em'), stats.stargazers_count);
-		return target;
 	}
 
 	function animateCount(container, count, i) {
