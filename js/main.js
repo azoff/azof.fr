@@ -1,7 +1,3 @@
-if (('www.azof.fr' === location.host) && (location.protocol !== 'https:')) {
-    location.protocol = "https";
-}
-
 require.config({
 	paths: {
 		jquery: 'third_party/jquery'
