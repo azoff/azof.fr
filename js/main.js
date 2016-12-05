@@ -1,4 +1,4 @@
-if (('azof.fr' === location.host) && (location.protocol !== 'https:')) {
+if (('www.azof.fr' === location.host) && (location.protocol !== 'https:')) {
     location.protocol = "https";
 }
 
