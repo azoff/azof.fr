@@ -1,1 +1,10 @@
-aside a { display: none; }
+#content {
+	aside {
+		padding-right: 0.5rem;
+		display: block;
+		text-align: right;
+		a {
+			display: none;
+		}
+	}
+}

@@ -15,7 +15,7 @@ header {
 	.title {
 		float: left;
 		h2 {
-			margin-left: 5.1em;
+			margin: 0 0.5rem;
 		}
 	}
 	aside {
@@ -28,9 +28,12 @@ header {
 	}
 }
 
+#content aside {
+	width: $aside-width;
+}
+
 aside {
 	overflow: hidden;
-	width: $aside-width;
 	padding-left: $default-size;
 	a, span {
 		line-height: 1.4;
