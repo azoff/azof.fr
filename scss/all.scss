@@ -13,7 +13,8 @@
 }
 
 body {
-	color: #444;
+	color: $color-light-text;
+	background-color: $color-light-background;
 	font: $default-size/1 Roboto, Helvetica, Verdana, Sans;
 	padding: $default-size;
 }
@@ -38,19 +39,27 @@ h4 {
 	font-weight: 300;
 }
 
-a {
+a, h1, h2, h3, h4 {
 
-	color: #CCC;
+	color: $color-light-link;
 	text-decoration: none;
-	@include transition(color 300ms);
 
 	&[href] {
-		color: #000;
 		&:hover {
 			text-decoration: underline;
 		}
 	}
 
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	body {
+		background-color: $color-dark-background;
+		color: $color-dark-text;
+	}
+	a, h1, h2, h3, h4 {
+		color: $color-dark-link;
+	}
 }
 
 small {
